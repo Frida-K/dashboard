@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Side Bar</title>
+</head>
+
+<body>
+    <nav class="sidebar">
+        <header>
+            <div class="imageTxt">
+                <span class="image">
+                    <img src="images/bxs-coffee-bean.svg" alt="graine de café">
+                </span>
+                <div class="txt headerTxt">
+                    <span class="pseudo"> Manga Fire </span>
+                    <span class="niveau"> Master </span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="colonne-menu">
+            <div class="menu">
+                <li class="recherche">
+                    <a href="#">
+                        <i class='bx bx-search icon'></i>
+                        <input type="text" placeholder="Rechercher...">
+                    </a>
+                </li>
+                <ul class="liens-menu">
+                    <li class="lien-menu">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="txt text-menu">Panneau de Profil</span>
+                        </a>
+                    </li>
+                    <li class="lien-menu">
+                        <a href="#">
+                            <i class='bx bx-line-chart icon'></i>
+                            <span class="txt text-menu">Activités</span>
+                        </a>
+                    </li>
+                    <li class="lien-menu">
+                        <a href="#">
+                            <i class='bx bx-list-check icon'></i>
+                            <span class="txt text-menu">Listes oeuvres</span>
+                        </a>
+                    </li>
+                    <li class="lien-menu">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="txt text-menu">Notifications</span>
+                        </a>
+                    </li>
+                    <li class="lien-menu">
+                        <a href="#">
+                            <i class='bx bx-book-heart icon'></i>
+                            <span class="txt text-menu">Oeuvres aimées</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <i class='bx bx-star icon'></i>
+                            <span class="txt text-menu">Points</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <li class="lien-menu">
+                    <a href="#">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="txt text-menu">Déconnexion</span>
+                    </a>
+                </li>
+                <li class="mode">
+                    <div class="lune-soleil">
+                        <i class='bx bx-moon icon lune'></i>
+                        <i class='bx bx-sun icon soleil'></i>
+                    </div>
+                    <span class="txt mode-txt">Mode nuit</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <section class="accueil">
+        <h2>Bienvenue sur votre profil !</h2>
+        <main class="grid">
+            <div class="profil">
+                <h1> Profil</h1>
+                <img src="/images/bxs-coffee-bean.svg" alt="">
+                <ul>
+                    <li>Pseudo : </li>
+                    <li>Age :</li>
+                    <li>sex :</li>
+                    <li>date d'inscription :</li>
+                    <li>dernière connexion :</li>
+                </ul>
+            </div>
+            <div class="livres-likés">
+                <h1> Oeuvres aimées</h1>
+                <span class="livres-aimes">
+                    <img src="/images/microphone.png" alt="">
+                    <span class="titre-livre">
+                        <h3>Titre oeuvre</h3>
+                        <p>Note: * * * * *</p>
+                    </span>
+                </span>
+                <span class="livres-aimes">
+                    <img src="/images/microphone.png" alt="">
+                    <span class="titre-livre">
+                        <h3>Titre oeuvre</h3>
+                        <p>Note: * * * * *</p>
+                    </span>
+                </span>
+                <span class="livres-aimes">
+                    <img src="/images/microphone.png" alt="">
+                    <span class="titre-livre">
+                        <h3>Titre oeuvre</h3>
+                        <p>Note: * * * * *</p>
+                    </span>
+                </span>
+            </div>
+            <div class="livres-lus">
+                <h1> Oeuvres Lus</h1>
+                <hr>
+                <span class="livre">
+                    <img src="/images/microphone.png" alt="">
+                    <span class="titre-livre">
+                        <h3>Titre oeuvre</h3>
+                        <p>status:</p>
+                    </span>
+                </span>
+                <hr>
+                <span class="livre">
+                    <img src="/images/microphone.png" alt="">
+                    <span class="titre-livre">
+                        <h3>Titre oeuvre</h3>
+                        <p>status:</p>
+                    </span>
+                </span>
+                <hr>
+                <span class="livre">
+                    <img src="/images/microphone.png" alt="">
+                    <span class="titre-livre">
+                        <h3>Titre oeuvre</h3>
+                        <p>status:</p>
+                    </span>
+                </span>
+                <hr>
+                <span class="livre">
+                    <img src="/images/microphone.png" alt="">
+                    <span class="titre-livre">
+                        <h3>Titre oeuvre</h3>
+                        <p>status:</p>
+                    </span>
+                </span>
+                <hr>
+            </div>
+            <div class="activite">
+                <h1> Activité</h1>
+            </div>
+            <div class="points">
+                <h1> Points </h1>
+                <p>
+                    Points de contribution : 100 pts<br>
+                    Vous avez le niveau de MASTER</p>
+            </div>
+            <div class="messages">
+                <h1> Messages </h1>
+                <ul>
+                    <li> Recus : 0 Messages </li>
+                    <li> Envoyés : 0 Messages </li>
+                </ul>
+            </div>
+        </main>
+    </section>
+</body>
+<script src="js/main.js"></script>
+
+</html>

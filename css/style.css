@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+*,
+::after,
+::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*============ variables ===========*/
+:root{
+    --body-color: #9ab2f170;
+    --sidebar-color: #fff;
+    --prim-color: #5283B6ff;
+    --prim-color-light: rgba(214, 231, 243, 0.648);
+    --toggle-color: #ddd;
+    --text-color:#707070;
+/* transition */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+/*========== Body ==========*/
+body{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+body.dark{
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --prim-color: #3a3b3c;
+    --prim-color-light: #3a3b3c;
+    --toggle-color: rgb(213, 209, 209);
+    --text-color:rgb(190, 186, 186);
+}
+/*========== Sidebar ==========*/
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+.sidebar.fermer{
+    width: 88px;
+}
+.sidebar header{
+    position: relative;
+}
+.sidebar .txt{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+}
+.sidebar.fermer .txt{
+    opacity: 0;
+}
+.sidebar .image{
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar li{
+    height: 2.5em;
+    margin-top: 1rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.sidebar li .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+.sidebar li .icon,
+.sidebar li .txt{
+    color: var(--text-color);
+    transition: var(--tran-02);
+
+}
+.sidebar .imageTxt img {
+    width: 40px;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.sidebar header .imageTxt {
+    display: flex;
+    align-items: center;
+}
+
+header .imageTxt .headerTxt{
+    display: flex;
+    flex-direction: column;
+
+}
+.headerTxt .pseudo{
+    font-weight: 600;
+}
+.headerTxt .profession{
+    margin-top: -2px;
+}
+.sidebar header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background: var(--prim-color);
+    display: flex;
+    align-items: center;justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 22px;
+    transition: var(--tran-03);
+}
+.sidebar.fermer header .toggle{
+    transform: translateY(-50%);
+}
+body.dark .sidebar header .toggle{
+    color:var(--text-color)
+}
+/*========== Barre de recherche ==========*/
+.sidebar .menu{
+    margin-top: 1rem;
+}
+.sidebar .recherche{
+    background: var(--prim-color-light);
+    border-radius: 0.5rem;
+    transition: var(--tran-05);
+}
+.recherche input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--prim-color-light)
+}
+/*========== Liens navigation ==========*/
+.sidebar li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: var(--tran-04);
+}
+.sidebar li a:hover{
+    background: var(--prim-color);
+    color: #fff;
+}
+.sidebar li a:hover .icon,
+.sidebar li a:hover .txt{
+    color: var(--sidebar-color)
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .txt{
+    color: var(--text-color)
+}
+/*========== Colonne Menu ==========*/
+.sidebar .colonne-menu {
+    height: calc(100%-50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.colonne-menu .mode{
+    position: relative;
+    background: var(--prim-color-light);
+}
+.colonne-menu .mode .lune-soleil{
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+.colonne-menu .mode i{
+    position: absolute;
+    transition: var(--tran-03);
+}
+.colonne-menu .mode i.soleil{
+    opacity: 0;
+}
+body.dark .colonne-menu .mode i.soleil {
+    opacity: 1;
+}
+body.dark .colonne-menu .mode i.lune {
+    opacity: 0;
+}
+/*========== Bouton switch jour/nuit ==========*/
+.colonne-menu .mode .toggle-switch{
+    position: absolute;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background: var(--prim-color-light);
+    transition: var(--tran-05);
+}
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    min-width: 44px;
+    border-radius: 1rem;
+    background: var(--toggle-color);
+    
+}
+.switch::before{
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    height: 15px;
+    width: 15px;
+    border-radius: 2rem;
+    transform: translateY(-50%);
+    background: var(--sidebar-color);
+    transition: var(--tran-03);
+}
+body.dark .switch::before{
+    left: 25px;
+}
+/*========== Accueil ==========*/
+.accueil{
+    position: relative;
+    left: 250px;
+    width: calc(100% - 250px);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.sidebar.fermer ~ .accueil{
+    left: 88px;
+    width: calc(100% - 88px);
+}
+h2{
+    color: var(--text-color);
+    text-align: center;
+}
+main h1{
+    margin: 0.5rem;
+    color: var(--text-color);
+    font-size: 1.5em;
+    font-weight: 500;
+}
+main li, main p, main h3 {
+    color: var(--text-color);
+}
+
+hr{
+    border: none;
+    color:333;
+    border-top: 1px solid #333;
+    margin: 1rem;
+    width: 100%;
+}
+.profil img{
+    width: 100px;
+    margin: 0.5rem;
+    border: 1px solid#18191a;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+img{
+    width: 50px;
+}
+.grid{
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.profil, .livres-likés,
+.livres-lus, .activite,
+.points, .messages{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border-radius: 1rem;
+    background-color: var(--prim-color-light);
+    padding: 0.5rem;
+}
+.profil ul{
+    list-style: none;
+}
+.livre,
+.livres-aimes{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.livres-aimes{
+    padding: 1rem;
+}
+
+@media screen and (min-width: 40em) {
+
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .livres-lus{
+        grid-column: 3;
+        grid-row: span 3;
+
+    }
+    .activite{
+        grid-column: span 2;
+        grid-row: 2;
+    }
+
+}
